@@ -1,0 +1,10 @@
+pytesseract
+pymupdf
+pillow
+numpy
+pandas
+openpyxl
+faker
+augraphy
+matplotlib
+jupyter

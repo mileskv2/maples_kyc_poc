@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
-data/generated/
+.ipynb_checkpoints/
 data/external/
+data/demo/
 output/
