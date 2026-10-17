@@ -1,12 +1,12 @@
 # maples_kyc_poc — Maples KYC Document Extraction (Proof of Concept)
 
-McGill MMA Capstone (BUSA 693) with Maples Group, AML/KYC & Data Management.
+McGill MMA Capstone with Maples Group, AML/KYC and Data Management.
 **Synthetic and public data only. 
 
-## What it does
+## What this does
 
-An individual investor uploads an ID and a subscription agreement, as messy as real uploads are
-(phone photos, scans, sideways, shadows). The pipeline:
+This mimmicks an individual investor uploading an ID and a subscription agreement, as messy as real uploads are
+(phone photos, scans, sideways, shadows). The pipeline then does:
 
 ```
 uploads ──► classify ──► extract (2 methods per document) ──► validate ──► cross-check ──► Excel tracker
