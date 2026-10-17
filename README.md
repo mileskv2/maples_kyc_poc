@@ -1,7 +1,7 @@
 # maples_kyc_poc — Maples KYC Document Extraction (Proof of Concept)
 
 McGill MMA Capstone (BUSA 693) with Maples Group, AML/KYC & Data Management.
-**Synthetic and public data only. No client data, ever.**
+**Synthetic and public data only. 
 
 ## What it does
 
@@ -20,7 +20,7 @@ uploads ──► classify ──► extract (2 methods per document) ──► 
 **Traffic light**
 
 - 🟢 **Green**: two independent sources agree (two methods, or ID and subscription agreement)
-- 🟡 **Amber**: one source only, sources disagree, or a check digit fails → analyst confirms
+- 🟡 **Amber**: one source only, sources disagree, or a check digit fails → analyst confirmation upgrades this to a green
 - 🔴 **Red**: missing, expired, unreadable, or the subscription contradicts the ID → act on it
 
 A check digit alone never earns green: it can't tell `G` from `6` (ICAO values 16 and 6 collide mod 10),
@@ -140,4 +140,4 @@ maples_kyc_poc/
 
 1. Proof of address as a third document type.
 2. An LLM extractor as a third method, compared in the method-comparison sheet.
-3. Replace the SEC layouts with Maples' blank subscription form once received.
+3. Replace the SEC layouts with Maples' blank subscription form if received.
