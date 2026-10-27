@@ -6,7 +6,7 @@ McGill MMA Capstone with Maples Group, AML/KYC and Data Management.
 ## What this does
 
 This mimics an individual investor uploading an ID and a subscription agreement, as messy as real uploads are
-(phone photos, scans, sideways, shadows). The pipeline then does:
+(phone photos, scans, sideways, shadows). The pipeline goes like this:
 
 ```
 uploads ──► classify ──► extract (2 methods per document) ──► validate ──► cross-check ──► Excel tracker
@@ -23,8 +23,8 @@ uploads ──► classify ──► extract (2 methods per document) ──► 
 - 🟡 **Amber**: one source only, sources disagree, or a check digit fails → analyst confirmation upgrades this to a green
 - 🔴 **Red**: missing, expired, unreadable, or the subscription contradicts the ID → act on it
 
-A check digit alone never earns green: it can't tell `G` from `6` (ICAO values 16 and 6 collide mod 10),
-and it can flag an `O`/`0` misread without saying which one is right.
+Every passport has a built-in error check: a few digits at the bottom that a computer can use to confirm it read the passport correctly. But this check misses some mistakes. If the computer misreads a G as a 6 for example, the check still says everything is fine. So we never mark a field green based on that check alone. The value also has to match what's printed elsewhere on the passport.
+
 
 ## Data
 
@@ -85,7 +85,7 @@ python -m prepare.build_demo           # rebuilds the 40 investors in data/demo/
 ## Repo layout
 
 The folders follow the pipeline, in the order the data flows through it. Each stage is its own
-folder or file, so one person can work on a stage without touching the others.
+folder or file, so one person can work on a stage without the others being touched.
 
 ```
 maples_kyc_poc/
@@ -181,4 +181,4 @@ Everything is in the repo; cloning it gets you all of it.
    Microsoft) and compare it side by side with the two we have.
 3. **Add proof of address** (utility bill or bank statement) and check it against the ID name and the
    subscription address. That also lets us flag a missing document, not just a missing field.
-4. **Use Maples' real blank subscription form** once Jervis sends it, instead of the SEC forms.
+4. **Use Maples' real blank subscription form** once we have access.
