@@ -1,6 +1,6 @@
 """Build the demo set: one folder per investor holding an ID document and a filled subscription agreement.
 
-    python -m prepare.build_demo              # 40 investors into data/demo/ (not committed)
+    python -m prepare.build_demo              # 40 investors into data/demo/ (committed)
     python -m prepare.build_demo --samples    # copy a few of them into samples/ (committed)
 
 Each investor is a DocXPand person (fictional ID on a real photo background). We fill one of the

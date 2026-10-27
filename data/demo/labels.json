@@ -1,0 +1,1648 @@
+[
+  {
+    "investor_id": "INV-001",
+    "scenario": "address_mismatch",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_B",
+    "form": "cws_investments",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_B/a470bf1c-9d56-4336-b125-5114864e997a-PP_TD3_B-front.jpg"
+    },
+    "id": {
+      "surname": "Matias",
+      "given_names": "Kelly Vitória",
+      "date_of_birth": "1970-02-03",
+      "nationality": "VAL",
+      "document_number": "AI7S9DZ58",
+      "expiry_date": "2031-01-19",
+      "street": "2200 Danielle Locks Apt. 995",
+      "city": "East Michael",
+      "address_on_id": false,
+      "mrz": [
+        "P<VALMATIAS<<KELLY<VITORIA<<<<<<<<<<<<<<<<<<",
+        "AI7S9DZ585VAL7003022F3101193<<<<<<<<<<<<<<<8"
+      ]
+    },
+    "subscription": {
+      "full_name": "Kelly Vitoria Matias",
+      "date_of_birth": "02/03/1970",
+      "citizenship": "VAL",
+      "street": "5346 Mcgrath Springs",
+      "city": "East Michael",
+      "ssn": "954-92-2389",
+      "phone": "(137) 832-5674",
+      "email": "kelly.matias@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-002",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/3f85c867-41ce-4a4b-b635-4e0b2a7fe74f-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Vidal",
+      "given_names": "Daniel Thibault",
+      "date_of_birth": "1947-10-01",
+      "nationality": "GAL",
+      "document_number": "MA4O0PC73",
+      "expiry_date": "2031-08-06",
+      "street": "ruelle Dominique Benoit",
+      "city": "17656 Lebreton",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALVIDAL<<DANIEL<THIBAULT<<<<<<<<<<<<<<<<<",
+        "MA4O0PC739GAL4701109M3106084<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Daniel Thibault Vidal",
+      "date_of_birth": "10/01/1947",
+      "citizenship": "GAL",
+      "street": "ruelle Dominique Benoit",
+      "city": "17656 Lebreton",
+      "ssn": "928-70-2971",
+      "phone": "(270) 453-4577",
+      "email": "daniel.vidal@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-003",
+    "scenario": "missing_dob",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_B",
+    "form": "rei_capital_growth",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_B/7fc1b0fd-1268-47aa-89eb-5e5c4d6e219f-PP_TD3_B-front.jpg"
+    },
+    "id": {
+      "surname": "Abreu",
+      "given_names": "Renata Helena",
+      "date_of_birth": "1930-02-09",
+      "nationality": "VAL",
+      "document_number": "MO6C6JL05",
+      "expiry_date": "2033-01-19",
+      "street": "0026 Villanueva Island",
+      "city": "North Sarahmouth",
+      "address_on_id": false,
+      "mrz": [
+        "P<VALABREU<<RENATA<HELENA<<<<<<<<<<<<<<<<<<<",
+        "MO6C6JL055VAL3009026F3301199<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Renata Helena Abreu",
+      "date_of_birth": "",
+      "citizenship": "VAL",
+      "street": "0026 Villanueva Island",
+      "city": "North Sarahmouth",
+      "ssn": "951-97-9492",
+      "phone": "(691) 524-6019",
+      "email": "renata.abreu@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-004",
+    "scenario": "missing_dob",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_B",
+    "form": "commune_omni_fund",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_B/417ee552-188b-4645-8985-ea1fe2046f73-PP_TD3_B-front.jpg"
+    },
+    "id": {
+      "surname": "Nogueira",
+      "given_names": "Bernardo Enzo Eduardo",
+      "date_of_birth": "1974-05-06",
+      "nationality": "VAL",
+      "document_number": "BD8C8EL56",
+      "expiry_date": "2028-03-03",
+      "street": "686 Fisher Knolls",
+      "city": "Christopherstad",
+      "address_on_id": false,
+      "mrz": [
+        "P<VALNOGUEIRA<<BERNARDO<ENZO<EDUARDO<<<<<<<<",
+        "BD8C8EL564VAL7406058M2803032<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Bernardo Enzo Eduardo Nogueira",
+      "date_of_birth": "",
+      "citizenship": "VAL",
+      "street": "686 Fisher Knolls",
+      "city": "Christopherstad",
+      "ssn": "971-23-1930",
+      "phone": "(528) 590-0314",
+      "email": "bernardo.nogueira@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-005",
+    "scenario": "missing_dob",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_C",
+    "form": "cws_investments",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_C/77a30096-20c1-449b-94c1-5a840a281734-PP_TD3_C-front.jpg"
+    },
+    "id": {
+      "surname": "Jorlink",
+      "given_names": "Cornelis Ben",
+      "date_of_birth": "1956-06-08",
+      "nationality": "LEM",
+      "document_number": "KM6H8YK60",
+      "expiry_date": "2032-05-16",
+      "street": "16877 Krista Fork Apt. 281",
+      "city": "Millerton",
+      "address_on_id": false,
+      "mrz": [
+        "P<LEMJORLINK<<CORNELIS<BEN<<<<<<<<<<<<<<<<<<",
+        "KM6H8YK607LEM5608065M3205161<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Cornelis Ben Jorlink",
+      "date_of_birth": "",
+      "citizenship": "LEM",
+      "street": "16877 Krista Fork Apt. 281",
+      "city": "Millerton",
+      "ssn": "953-63-4207",
+      "phone": "(491) 923-2752",
+      "email": "cornelis.jorlink@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-006",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_C",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_C/719dc223-b00c-4e02-9ada-1fc9b7563250-PP_TD3_C-front.jpg"
+    },
+    "id": {
+      "surname": "İhsanoğlu",
+      "given_names": "Maynur",
+      "date_of_birth": "1927-07-24",
+      "nationality": "LEM",
+      "document_number": "FG8S3LZ77",
+      "expiry_date": "2027-05-23",
+      "street": "8612 Charles Parkway Suite 837",
+      "city": "Wendymouth",
+      "address_on_id": false,
+      "mrz": [
+        "P<LEMIHSANOGLU<<MAYNUR<<<<<<<<<<<<<<<<<<<<<<",
+        "FG8S3LZ770LEM2707244F2705239<<<<<<<<<<<<<<<4"
+      ]
+    },
+    "subscription": {
+      "full_name": "Maynur Ihsanoglu",
+      "date_of_birth": "07/24/1927",
+      "citizenship": "LEM",
+      "street": "8612 Charles Parkway Suite 837",
+      "city": "Wendymouth",
+      "ssn": "926-64-5237",
+      "phone": "(368) 299-1843",
+      "email": "maynur.ihsanoglu@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-007",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "rei_capital_growth",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.jpg": "subscription",
+      "upload_3.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/cd4bb89f-f973-4807-a6c2-2a4e6c059a9a-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Durmuş",
+      "given_names": "Yalın",
+      "date_of_birth": "1934-06-18",
+      "nationality": "GAL",
+      "document_number": "PN1I2EZ28",
+      "expiry_date": "2030-07-25",
+      "street": "715 espace Mathilde Marin",
+      "city": "05678 Fontainedan",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALDURMUS<<YALN<<<<<<<<<<<<<<<<<<<<<<<<<<<",
+        "PN1I2EZ280GAL3406186F3007251<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Yaln Durmus",
+      "date_of_birth": "06/18/1934",
+      "citizenship": "GAL",
+      "street": "715 espace Mathilde Marin",
+      "city": "05678 Fontainedan",
+      "ssn": "926-15-9632",
+      "phone": "(738) 171-8146",
+      "email": "yaln.durmus@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-008",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "commune_omni_fund",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/fa27581b-eb74-4348-b179-096cebb4ca1d-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Ruiz",
+      "given_names": "Noémi",
+      "date_of_birth": "1964-04-09",
+      "nationality": "GAL",
+      "document_number": "QX0I5JN99",
+      "expiry_date": "2027-08-13",
+      "street": "4 quinquies rue de Pierre",
+      "city": "05899 La Dominiquenec",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALRUIZ<<NOEMI<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
+        "QX0I5JN998GAL6409041F2708137<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Noemi Ruiz",
+      "date_of_birth": "04/09/1964",
+      "citizenship": "GAL",
+      "street": "4 quinquies rue de Pierre",
+      "city": "05899 La Dominiquenec",
+      "ssn": "975-90-8032",
+      "phone": "(327) 780-7727",
+      "email": "noemi.ruiz@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-009",
+    "scenario": "clean",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "cws_investments",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/bdc33cad-30b1-46cf-bf92-8ae5d1b8b151-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/bdc33cad-30b1-46cf-bf92-8ae5d1b8b151-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Noack",
+      "given_names": "Philipp",
+      "date_of_birth": "1928-12-28",
+      "nationality": "BRD",
+      "document_number": "WA683FV5506",
+      "expiry_date": "2028-07-19",
+      "street": "Klingelhöfergasse 5/6",
+      "city": "82068 Stümen",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDWA683FV55<065<<<<<<<<<<<<",
+        "2812287M2807199BRD<<<<<<<<<<<2",
+        "NOACK<<PHILIPP<<<<<<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Philipp Noack",
+      "date_of_birth": "12/28/1928",
+      "citizenship": "BRD",
+      "street": "Klingelhofergasse 5/6",
+      "city": "82068 Stumen",
+      "ssn": "993-68-9092",
+      "phone": "(372) 890-2579",
+      "email": "philipp.noack@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-010",
+    "scenario": "clean",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/ba927602-0c95-42be-a694-61099f9132e2-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/ba927602-0c95-42be-a694-61099f9132e2-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Trubin",
+      "given_names": "Lara",
+      "date_of_birth": "1998-10-27",
+      "nationality": "BRD",
+      "document_number": "IM967RS1151",
+      "expiry_date": "2027-12-27",
+      "street": "Schülerring 38",
+      "city": "83696 Wud",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDIM967RS11<519<<<<<<<<<<<<",
+        "9810271F2712273BRD<<<<<<<<<<<0",
+        "TRUBIN<<LARA<<<<<<<<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Lara Trubin",
+      "date_of_birth": "10/27/1998",
+      "citizenship": "BRD",
+      "street": "Schulerring 38",
+      "city": "83696 Wud",
+      "ssn": "919-74-8363",
+      "phone": "(747) 566-1250",
+      "email": "lara.trubin@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-011",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "rei_capital_growth",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/6f82abee-0467-4e08-86aa-ff375afcd407-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Gimenez",
+      "given_names": "Éric Raymond",
+      "date_of_birth": "1953-09-17",
+      "nationality": "GAL",
+      "document_number": "MU7H3MH84",
+      "expiry_date": "2030-01-04",
+      "street": "59, espace Lucas",
+      "city": "21133 Pichon",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALGIMENEZ<<ERIC<RAYMOND<<<<<<<<<<<<<<<<<<",
+        "MU7H3MH848GAL5309177M3004010<<<<<<<<<<<<<<<0"
+      ]
+    },
+    "subscription": {
+      "full_name": "Eric Raymond Gimenez",
+      "date_of_birth": "09/17/1953",
+      "citizenship": "GAL",
+      "street": "59, espace Lucas",
+      "city": "21133 Pichon",
+      "ssn": "910-72-8385",
+      "phone": "(090) 518-7720",
+      "email": "eric.gimenez@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-012",
+    "scenario": "name_mismatch",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "commune_omni_fund",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/261c477e-e235-45e7-81fa-d02454b51c95-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/261c477e-e235-45e7-81fa-d02454b51c95-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Gehringer",
+      "given_names": "Denise",
+      "date_of_birth": "1998-03-15",
+      "nationality": "BRD",
+      "document_number": "TW767SF8666",
+      "expiry_date": "2028-09-22",
+      "street": "Paulo-Biggen-Platz 2",
+      "city": "01891 Bad Krüden",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDTW767SF86<662<<<<<<<<<<<<",
+        "9803156F2809229BRD<<<<<<<<<<<4",
+        "GEHRINGER<<DENISE<<<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Denise Townsend",
+      "date_of_birth": "03/15/1998",
+      "citizenship": "BRD",
+      "street": "Paulo-Biggen-Platz 2",
+      "city": "01891 Bad Kruden",
+      "ssn": "928-63-6635",
+      "phone": "(362) 515-5788",
+      "email": "denise.gehringer@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-013",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_C",
+    "form": "cws_investments",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_C/51cc04a0-2e19-4cd1-877b-9b093abe0a97-PP_TD3_C-front.jpg"
+    },
+    "id": {
+      "surname": "van den Brand",
+      "given_names": "Jasper Keano James",
+      "date_of_birth": "1998-02-10",
+      "nationality": "LEM",
+      "document_number": "XA5V9XP87",
+      "expiry_date": "2031-04-03",
+      "street": "46201 Harrell Skyway",
+      "city": "Carolport",
+      "address_on_id": false,
+      "mrz": [
+        "P<LEMVAN<DEN<BRAND<<JASPER<KEANO<JAMES<<<<<<",
+        "XA5V9XP879LEM9810020M3103049<<<<<<<<<<<<<<<2"
+      ]
+    },
+    "subscription": {
+      "full_name": "Jasper Keano James van den Brand",
+      "date_of_birth": "02/10/1998",
+      "citizenship": "LEM",
+      "street": "46201 Harrell Skyway",
+      "city": "Carolport",
+      "ssn": "946-91-3439",
+      "phone": "(346) 564-8044",
+      "email": "jasper.van den brand@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-014",
+    "scenario": "missing_dob",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/2ab8125d-ab55-44a5-96c2-610a40491f45-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Vidal-Ferreira",
+      "given_names": "Claude Amélie",
+      "date_of_birth": "1940-02-08",
+      "nationality": "GAL",
+      "document_number": "UB5N0SO32",
+      "expiry_date": "2031-07-15",
+      "street": "9 faubourg Honoré Bonneau",
+      "city": "43793 Le Philippine",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALVIDAL<FERREIRA<<CLAUDE<AMELIE<<<<<<<<<<",
+        "UB5N0SO326GAL4008026F3107151<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Claude Amelie Vidal-Ferreira",
+      "date_of_birth": "",
+      "citizenship": "GAL",
+      "street": "9 faubourg Honore Bonneau",
+      "city": "43793 Le Philippine",
+      "ssn": "967-52-8372",
+      "phone": "(576) 584-8537",
+      "email": "claude.vidal-ferreira@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-015",
+    "scenario": "name_mismatch",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "rei_capital_growth",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/5dfcfe07-71d8-4501-9391-39a83bad7bbd-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Hardy",
+      "given_names": "Adrien Aurore",
+      "date_of_birth": "1953-01-02",
+      "nationality": "GAL",
+      "document_number": "CK5B2ZR20",
+      "expiry_date": "2027-08-09",
+      "street": "3, place Reynaud",
+      "city": "86514 Saint Emmanuelle",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALHARDY<<ADRIEN<AURORE<<<<<<<<<<<<<<<<<<<",
+        "CK5B2ZR202GAL5302019<2709086<<<<<<<<<<<<<<<4"
+      ]
+    },
+    "subscription": {
+      "full_name": "Adrien Sharp",
+      "date_of_birth": "01/02/1953",
+      "citizenship": "GAL",
+      "street": "3, place Reynaud",
+      "city": "86514 Saint Emmanuelle",
+      "ssn": "980-34-4999",
+      "phone": "(153) 542-9106",
+      "email": "adrien.hardy@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-016",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "commune_omni_fund",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/90783bfe-88ca-4e81-b294-2f78757728b0-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Lévy",
+      "given_names": "Joséphine Maggie",
+      "date_of_birth": "1962-10-14",
+      "nationality": "GAL",
+      "document_number": "KR8N9HV17",
+      "expiry_date": "2025-12-15",
+      "street": "617 halle Lecomte",
+      "city": "85966 Renard-sur-Regnier",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALLEVY<<JOSEPHINE<MAGGIE<<<<<<<<<<<<<<<<<",
+        "KR8N9HV171GAL6210146F2512152<<<<<<<<<<<<<<<8"
+      ]
+    },
+    "subscription": {
+      "full_name": "Josephine Maggie Levy",
+      "date_of_birth": "10/14/1962",
+      "citizenship": "GAL",
+      "street": "617 halle Lecomte",
+      "city": "85966 Renard-sur-Regnier",
+      "ssn": "953-81-2492",
+      "phone": "(689) 064-1003",
+      "email": "josephine.levy@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-017",
+    "scenario": "dob_mismatch",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "cws_investments",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/69fb15c3-32fe-4da2-bbc9-9fef23ea5dbe-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Guillon",
+      "given_names": "Mathilde Aurore Jacqueline",
+      "date_of_birth": "1967-12-26",
+      "nationality": "GAL",
+      "document_number": "OF5O9AJ93",
+      "expiry_date": "2028-08-20",
+      "street": "5 bis rue de Michel",
+      "city": "25322 Bouchetboeuf",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALGUILLON<<MATHILDE<AURORE<JACQUELINE<<<<",
+        "OF5O9AJ936GAL6712260F2808200<<<<<<<<<<<<<<<0"
+      ]
+    },
+    "subscription": {
+      "full_name": "Mathilde Aurore Jacqueline Guillon",
+      "date_of_birth": "12/26/1965",
+      "citizenship": "GAL",
+      "street": "5 bis rue de Michel",
+      "city": "25322 Bouchetboeuf",
+      "ssn": "957-43-4311",
+      "phone": "(790) 889-6929",
+      "email": "mathilde.guillon@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-018",
+    "scenario": "name_mismatch",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/ff8fe872-9556-4ee9-84e2-24c7460a1fca-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/ff8fe872-9556-4ee9-84e2-24c7460a1fca-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Schmidt",
+      "given_names": "Elise",
+      "date_of_birth": "1954-02-23",
+      "nationality": "BRD",
+      "document_number": "ZH930JO9102",
+      "expiry_date": "2031-10-05",
+      "street": "Dittmar-Hamann-Weg 13",
+      "city": "89777 Sags",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDZH930JO91<027<<<<<<<<<<<<",
+        "5402230F3105102BRD<<<<<<<<<<<4",
+        "SCHMIDT<<ELISE<<<<<<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Elise Sloan",
+      "date_of_birth": "02/23/1954",
+      "citizenship": "BRD",
+      "street": "Dittmar-Hamann-Weg 13",
+      "city": "89777 Sags",
+      "ssn": "962-77-4440",
+      "phone": "(130) 721-2061",
+      "email": "elise.schmidt@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-019",
+    "scenario": "address_mismatch",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_B",
+    "form": "rei_capital_growth",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_B/f4aacdf9-9cf1-4000-9280-e3c5b038948d-PP_TD3_B-front.jpg"
+    },
+    "id": {
+      "surname": "Bilgin",
+      "given_names": "Sirap Aylil",
+      "date_of_birth": "1940-04-08",
+      "nationality": "VAL",
+      "document_number": "XW2R3HW94",
+      "expiry_date": "2032-08-14",
+      "street": "11436 Johnson Locks Suite 384",
+      "city": "Johnsonview",
+      "address_on_id": false,
+      "mrz": [
+        "P<VALBILGIN<<SIRAP<AYLIL<<<<<<<<<<<<<<<<<<<<",
+        "XW2R3HW949VAL4008048F3208140<<<<<<<<<<<<<<<4"
+      ]
+    },
+    "subscription": {
+      "full_name": "Sirap Aylil Bilgin",
+      "date_of_birth": "04/08/1940",
+      "citizenship": "VAL",
+      "street": "69907 Mallory Trail Suite 967",
+      "city": "Johnsonview",
+      "ssn": "919-60-9648",
+      "phone": "(052) 484-4260",
+      "email": "sirap.bilgin@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-020",
+    "scenario": "address_mismatch",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_C",
+    "form": "commune_omni_fund",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_C/c84389af-3a32-4a92-bd1e-37bda39e5093-PP_TD3_C-front.jpg"
+    },
+    "id": {
+      "surname": "Verda",
+      "given_names": "Helena Pippa",
+      "date_of_birth": "1951-11-29",
+      "nationality": "LEM",
+      "document_number": "TZ9L9MI30",
+      "expiry_date": "2029-06-22",
+      "street": "85997 Wright Alley",
+      "city": "North Amandafurt",
+      "address_on_id": false,
+      "mrz": [
+        "P<LEMVERDA<<HELENA<PIPPA<<<<<<<<<<<<<<<<<<<<",
+        "TZ9L9MI308LEM5111291F2906221<<<<<<<<<<<<<<<0"
+      ]
+    },
+    "subscription": {
+      "full_name": "Helena Pippa Verda",
+      "date_of_birth": "11/29/1951",
+      "citizenship": "LEM",
+      "street": "732 Ronald Branch",
+      "city": "North Amandafurt",
+      "ssn": "941-23-4666",
+      "phone": "(106) 992-7681",
+      "email": "helena.verda@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-021",
+    "scenario": "clean",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "cws_investments",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/b2673ab3-3482-4989-bc9c-b27e8dd9c5bd-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/b2673ab3-3482-4989-bc9c-b27e8dd9c5bd-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Rogner",
+      "given_names": "Maritta",
+      "date_of_birth": "1967-01-08",
+      "nationality": "BRD",
+      "document_number": "OO856OB4210",
+      "expiry_date": "2029-07-19",
+      "street": "Gnatzstraße 7",
+      "city": "08119 Schrümenwalde",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDOO856OB42<103<<<<<<<<<<<<",
+        "6708010F2907192BRD<<<<<<<<<<<4",
+        "ROGNER<<MARITTA<<<<<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Maritta Rogner",
+      "date_of_birth": "01/08/1967",
+      "citizenship": "BRD",
+      "street": "Gnatzstrae 7",
+      "city": "08119 Schrumenwalde",
+      "ssn": "943-38-1018",
+      "phone": "(113) 127-0493",
+      "email": "maritta.rogner@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-022",
+    "scenario": "name_mismatch",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/2f9de7c6-a48d-4250-b7ec-74263bb3503f-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/2f9de7c6-a48d-4250-b7ec-74263bb3503f-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Gertz-Tintzmann",
+      "given_names": "Gunter Karl-Otto",
+      "date_of_birth": "1923-08-31",
+      "nationality": "BRD",
+      "document_number": "NQ661AH9902",
+      "expiry_date": "2030-02-03",
+      "street": "Hans-Dietrich-Wähner-Allee 02",
+      "city": "22352 Großstralings",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDNQ661AH99<021<<<<<<<<<<<<",
+        "2308319M3003024BRD<<<<<<<<<<<0",
+        "GERTZ<TINTZMANN<<GUNTER<KARL<O"
+      ]
+    },
+    "subscription": {
+      "full_name": "Gunter Caldwell",
+      "date_of_birth": "08/31/1923",
+      "citizenship": "BRD",
+      "street": "Hans-Dietrich-Wahner-Allee 02",
+      "city": "22352 Grostralings",
+      "ssn": "942-39-7952",
+      "phone": "(720) 521-4877",
+      "email": "gunter.gertz-tintzmann@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-023",
+    "scenario": "dob_mismatch",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_B",
+    "form": "rei_capital_growth",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_B/b7fd36cf-7de3-48f4-8966-7f7167331066-PP_TD3_B-front.jpg"
+    },
+    "id": {
+      "surname": "Loureiro",
+      "given_names": "Benjamim",
+      "date_of_birth": "1981-09-23",
+      "nationality": "VAL",
+      "document_number": "FQ4H0EO11",
+      "expiry_date": "2030-06-22",
+      "street": "59425 Stein Motorway",
+      "city": "West Wayne",
+      "address_on_id": false,
+      "mrz": [
+        "P<VALLOUREIRO<<BENJAMIM<<<<<<<<<<<<<<<<<<<<<",
+        "FQ4H0EO112VAL8109231M3006221<<<<<<<<<<<<<<<4"
+      ]
+    },
+    "subscription": {
+      "full_name": "Benjamim Loureiro",
+      "date_of_birth": "09/23/1983",
+      "citizenship": "VAL",
+      "street": "59425 Stein Motorway",
+      "city": "West Wayne",
+      "ssn": "973-14-6538",
+      "phone": "(400) 000-9164",
+      "email": "benjamim.loureiro@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-024",
+    "scenario": "dob_mismatch",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "commune_omni_fund",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/65563c60-acba-47e1-a367-73daa0f11ed3-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/65563c60-acba-47e1-a367-73daa0f11ed3-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Schmid",
+      "given_names": "Ester Amela",
+      "date_of_birth": "1996-07-13",
+      "nationality": "BRD",
+      "document_number": "ET620YE3288",
+      "expiry_date": "2029-10-29",
+      "street": "Helmut-Drewes-Weg 0",
+      "city": "63989 Ton",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDET620YE32<888<<<<<<<<<<<<",
+        "9607136F2910297BRD<<<<<<<<<<<6",
+        "SCHMID<<ESTER<AMELA<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Ester Amela Schmid",
+      "date_of_birth": "07/13/1997",
+      "citizenship": "BRD",
+      "street": "Helmut-Drewes-Weg 0",
+      "city": "63989 Ton",
+      "ssn": "960-35-1110",
+      "phone": "(492) 790-5597",
+      "email": "ester.schmid@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-025",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "cws_investments",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/037aab77-9141-473f-b02a-e2e71f557264-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Vallée",
+      "given_names": "Christine",
+      "date_of_birth": "1923-08-17",
+      "nationality": "GAL",
+      "document_number": "NI6D3GQ31",
+      "expiry_date": "2032-08-06",
+      "street": "5, zone de Pascal",
+      "city": "47447 Le Hortense",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALVALLEE<<CHRISTINE<<<<<<<<<<<<<<<<<<<<<<",
+        "NI6D3GQ319GAL2308179F3206087<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Christine Vallee",
+      "date_of_birth": "08/17/1923",
+      "citizenship": "GAL",
+      "street": "5, zone de Pascal",
+      "city": "47447 Le Hortense",
+      "ssn": "936-58-6843",
+      "phone": "(722) 152-6767",
+      "email": "christine.vallee@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-026",
+    "scenario": "missing_dob",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/635cd15b-28a2-41f4-9e41-01d79e3b3e12-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/635cd15b-28a2-41f4-9e41-01d79e3b3e12-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Zimmer",
+      "given_names": "Hans-Walter",
+      "date_of_birth": "1981-05-24",
+      "nationality": "BRD",
+      "document_number": "WW835VR6759",
+      "expiry_date": "2024-04-07",
+      "street": "Hans-Michael-Kambs-Straße 97½",
+      "city": "85010 Schwusteren",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDWW835VR67<591<<<<<<<<<<<<",
+        "8105244M2407049BRD<<<<<<<<<<<0",
+        "ZIMMER<<HANS<WALTER<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Hans-Walter Zimmer",
+      "date_of_birth": "",
+      "citizenship": "BRD",
+      "street": "Hans-Michael-Kambs-Strae 9712",
+      "city": "85010 Schwusteren",
+      "ssn": "960-30-5051",
+      "phone": "(495) 440-9959",
+      "email": "hans-walter.zimmer@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-027",
+    "scenario": "name_mismatch",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "rei_capital_growth",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/5b8d10eb-04d9-40bb-a938-26160dbfaa53-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/5b8d10eb-04d9-40bb-a938-26160dbfaa53-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Scholz",
+      "given_names": "Hubertine Leopoldine",
+      "date_of_birth": "1950-07-26",
+      "nationality": "BRD",
+      "document_number": "UN790WH9594",
+      "expiry_date": "2031-10-22",
+      "street": "Henckring 5/6",
+      "city": "76773 Hausfurt",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDUN790WH95<947<<<<<<<<<<<<",
+        "5007266F3110223BRD<<<<<<<<<<<6",
+        "SCHOLZ<<HUBERTINE<LEOPOLDINE<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Hubertine Guzman",
+      "date_of_birth": "07/26/1950",
+      "citizenship": "BRD",
+      "street": "Henckring 5/6",
+      "city": "76773 Hausfurt",
+      "ssn": "993-14-8892",
+      "phone": "(029) 496-3666",
+      "email": "hubertine.scholz@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-028",
+    "scenario": "missing_dob",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_B",
+    "form": "commune_omni_fund",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_B/d2880fbf-5051-4116-a716-9a1321c38972-PP_TD3_B-front.jpg"
+    },
+    "id": {
+      "surname": "Nogueira",
+      "given_names": "Diana Diana Flor",
+      "date_of_birth": "1953-11-17",
+      "nationality": "VAL",
+      "document_number": "QN0P6MT22",
+      "expiry_date": "2032-12-09",
+      "street": "69919 Duane Burg Apt. 192",
+      "city": "Tiffanytown",
+      "address_on_id": false,
+      "mrz": [
+        "P<VALNOGUEIRA<<DIANA<DIANA<FLOR<<<<<<<<<<<<<",
+        "QN0P6MT227VAL5311172F3209125<<<<<<<<<<<<<<<4"
+      ]
+    },
+    "subscription": {
+      "full_name": "Diana Diana Flor Nogueira",
+      "date_of_birth": "",
+      "citizenship": "VAL",
+      "street": "69919 Duane Burg Apt. 192",
+      "city": "Tiffanytown",
+      "ssn": "951-30-7988",
+      "phone": "(374) 054-4629",
+      "email": "diana.nogueira@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-029",
+    "scenario": "clean",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "cws_investments",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/d0331918-1b99-48c6-ac6a-16a181d4adc6-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/d0331918-1b99-48c6-ac6a-16a181d4adc6-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Jacob",
+      "given_names": "Pirmin",
+      "date_of_birth": "1999-08-15",
+      "nationality": "BRD",
+      "document_number": "NC044QY7906",
+      "expiry_date": "2032-09-08",
+      "street": "Erhard-Fritsch-Platz 14",
+      "city": "71134 Bad Stroedenstein",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDNC044QY79<069<<<<<<<<<<<<",
+        "9908154M3208092BRD<<<<<<<<<<<2",
+        "JACOB<<PIRMIN<<<<<<<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Pirmin Jacob",
+      "date_of_birth": "08/15/1999",
+      "citizenship": "BRD",
+      "street": "Erhard-Fritsch-Platz 14",
+      "city": "71134 Bad Stroedenstein",
+      "ssn": "910-23-6729",
+      "phone": "(042) 924-8758",
+      "email": "pirmin.jacob@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-030",
+    "scenario": "clean",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/3cb57651-c86d-496a-868c-10b74e76de46-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/3cb57651-c86d-496a-868c-10b74e76de46-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Mohaupt",
+      "given_names": "Hans-Peter",
+      "date_of_birth": "1943-03-07",
+      "nationality": "BRD",
+      "document_number": "CY935BO0571",
+      "expiry_date": "2029-11-22",
+      "street": "Freudenbergerallee 93",
+      "city": "66729 Struckrode",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDCY935BO05<717<<<<<<<<<<<<",
+        "4307039M2911227BRD<<<<<<<<<<<6",
+        "MOHAUPT<<HANS<PETER<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Hans-Peter Mohaupt",
+      "date_of_birth": "03/07/1943",
+      "citizenship": "BRD",
+      "street": "Freudenbergerallee 93",
+      "city": "66729 Struckrode",
+      "ssn": "961-36-1096",
+      "phone": "(188) 763-3490",
+      "email": "hans-peter.mohaupt@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-031",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "rei_capital_growth",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/cd2b27f1-0171-4105-91a2-29f37eb4dfc1-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Bodin",
+      "given_names": "Luc Adrien Gabriel Honoré",
+      "date_of_birth": "1993-04-28",
+      "nationality": "GAL",
+      "document_number": "UK3F9BB39",
+      "expiry_date": "2030-01-19",
+      "street": "6 ter rue Lacroix",
+      "city": "86364 Thibault-la-Forêt",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALBODIN<<LUC<ADRIEN<GABRIEL<HONORE<<<<<<<",
+        "UK3F9BB391GAL9304284M3001190<<<<<<<<<<<<<<<8"
+      ]
+    },
+    "subscription": {
+      "full_name": "Luc Adrien Gabriel Honore Bodin",
+      "date_of_birth": "04/28/1993",
+      "citizenship": "GAL",
+      "street": "6 ter rue Lacroix",
+      "city": "86364 Thibault-la-Foret",
+      "ssn": "923-59-9036",
+      "phone": "(673) 490-6781",
+      "email": "luc.bodin@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-032",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_B",
+    "form": "commune_omni_fund",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_B/826407d5-a21d-4147-9179-61882645a9c3-PP_TD3_B-front.jpg"
+    },
+    "id": {
+      "surname": "Pinto",
+      "given_names": "Lisandro Miguel",
+      "date_of_birth": "1972-06-06",
+      "nationality": "VAL",
+      "document_number": "YI3B2OQ26",
+      "expiry_date": "2031-07-24",
+      "street": "55706 Lisa Trafficway Suite 060",
+      "city": "Brownton",
+      "address_on_id": false,
+      "mrz": [
+        "P<VALPINTO<<LISANDRO<MIGUEL<<<<<<<<<<<<<<<<<",
+        "YI3B2OQ266VAL7206063M3107243<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Lisandro Miguel Pinto",
+      "date_of_birth": "06/06/1972",
+      "citizenship": "VAL",
+      "street": "55706 Lisa Trafficway Suite 060",
+      "city": "Brownton",
+      "ssn": "926-15-8909",
+      "phone": "(851) 369-8485",
+      "email": "lisandro.pinto@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-033",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_C",
+    "form": "cws_investments",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_C/529ba43e-e8ee-4ba4-b62e-b4e3cfb36b19-PP_TD3_C-front.jpg"
+    },
+    "id": {
+      "surname": "van de Kooij",
+      "given_names": "Levi Senna",
+      "date_of_birth": "2000-07-21",
+      "nationality": "LEM",
+      "document_number": "MG3L5RK54",
+      "expiry_date": "2032-09-06",
+      "street": "41269 Phillip Hills",
+      "city": "Crystalland",
+      "address_on_id": false,
+      "mrz": [
+        "P<LEMVAN<DE<KOOIJ<<LEVI<SENNA<<<<<<<<<<<<<<<",
+        "MG3L5RK543LEM0007216M3206098<<<<<<<<<<<<<<<0"
+      ]
+    },
+    "subscription": {
+      "full_name": "Levi Senna van de Kooij",
+      "date_of_birth": "07/21/2000",
+      "citizenship": "LEM",
+      "street": "41269 Phillip Hills",
+      "city": "Crystalland",
+      "ssn": "981-96-1624",
+      "phone": "(789) 333-3124",
+      "email": "levi.van de kooij@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-034",
+    "scenario": "dob_mismatch",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_B",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_B/d6d9023c-573c-494e-b1d8-5078b0755fca-PP_TD3_B-front.jpg"
+    },
+    "id": {
+      "surname": "Akça-Karadeniz",
+      "given_names": "Sidar",
+      "date_of_birth": "1946-10-01",
+      "nationality": "VAL",
+      "document_number": "PD3M6CB45",
+      "expiry_date": "2031-01-13",
+      "street": "20101 Gonzalez Viaduct",
+      "city": "Port Katelynfurt",
+      "address_on_id": false,
+      "mrz": [
+        "P<VALAKCA<KARADENIZ<<SIDAR<<<<<<<<<<<<<<<<<<",
+        "PD3M6CB455VAL4601106F3101137<<<<<<<<<<<<<<<4"
+      ]
+    },
+    "subscription": {
+      "full_name": "Sidar Akca-Karadeniz",
+      "date_of_birth": "10/01/1947",
+      "citizenship": "VAL",
+      "street": "20101 Gonzalez Viaduct",
+      "city": "Port Katelynfurt",
+      "ssn": "959-86-8466",
+      "phone": "(599) 568-2307",
+      "email": "sidar.akca-karadeniz@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-035",
+    "scenario": "name_mismatch",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "rei_capital_growth",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/660b86a4-f0f2-4cdc-9e08-8cfb9f30f117-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/660b86a4-f0f2-4cdc-9e08-8cfb9f30f117-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Geisler",
+      "given_names": "Anna-Lena",
+      "date_of_birth": "1950-08-14",
+      "nationality": "BRD",
+      "document_number": "KZ627JC0052",
+      "expiry_date": "2026-09-15",
+      "street": "Luka-Klemt-Weg 04",
+      "city": "69195 Oppris",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDKZ627JC00<520<<<<<<<<<<<<",
+        "5008148F2609153BRD<<<<<<<<<<<6",
+        "GEISLER<<ANNA<LENA<<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Anna-Lena Ramirez",
+      "date_of_birth": "08/14/1950",
+      "citizenship": "BRD",
+      "street": "Luka-Klemt-Weg 04",
+      "city": "69195 Oppris",
+      "ssn": "984-41-7975",
+      "phone": "(515) 712-5905",
+      "email": "anna-lena.geisler@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-036",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_C",
+    "form": "commune_omni_fund",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_C/9343d5d3-094f-41c3-895f-b905a0fab016-PP_TD3_C-front.jpg"
+    },
+    "id": {
+      "surname": "Dijkman",
+      "given_names": "Josephine Yfke",
+      "date_of_birth": "1992-12-22",
+      "nationality": "LEM",
+      "document_number": "PY3Y4II87",
+      "expiry_date": "2033-04-09",
+      "street": "24935 Randy Gardens",
+      "city": "Lake Lindsey",
+      "address_on_id": false,
+      "mrz": [
+        "P<LEMDIJKMAN<<JOSEPHINE<YFKE<<<<<<<<<<<<<<<<",
+        "PY3Y4II875LEM9212222F3309047<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Josephine Yfke Dijkman",
+      "date_of_birth": "12/22/1992",
+      "citizenship": "LEM",
+      "street": "24935 Randy Gardens",
+      "city": "Lake Lindsey",
+      "ssn": "926-72-5716",
+      "phone": "(901) 039-7993",
+      "email": "josephine.dijkman@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-037",
+    "scenario": "clean",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "cws_investments",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/c104469e-1233-4c88-8d57-0de6eacdacf8-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/c104469e-1233-4c88-8d57-0de6eacdacf8-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Stiebitz-Klotz",
+      "given_names": "Anica Sibylle",
+      "date_of_birth": "1957-11-18",
+      "nationality": "BRD",
+      "document_number": "IW675JC3065",
+      "expiry_date": "2029-02-03",
+      "street": "Hentschelstraße 09B",
+      "city": "16062 Trenneren",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDIW675JC30<651<<<<<<<<<<<<",
+        "5711185F2903024BRD<<<<<<<<<<<6",
+        "STIEBITZ<KLOTZ<<ANICA<SIBYLLE<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Anica Sibylle Stiebitz-Klotz",
+      "date_of_birth": "11/18/1957",
+      "citizenship": "BRD",
+      "street": "Hentschelstrae 09B",
+      "city": "16062 Trenneren",
+      "ssn": "938-18-6749",
+      "phone": "(446) 179-9240",
+      "email": "anica.stiebitz-klotz@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-038",
+    "scenario": "clean",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/ada1dab0-ba41-4eab-bd23-e0cec4760e39-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/ada1dab0-ba41-4eab-bd23-e0cec4760e39-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Meyer",
+      "given_names": "Alexandra",
+      "date_of_birth": "1978-08-05",
+      "nationality": "BRD",
+      "document_number": "HL071CH0633",
+      "expiry_date": "2026-09-24",
+      "street": "Wirthring 84",
+      "city": "90422 Zabens",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDHL071CH06<331<<<<<<<<<<<<",
+        "7805086F2609245BRD<<<<<<<<<<<2",
+        "MEYER<<ALEXANDRA<<<<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Alexandra Meyer",
+      "date_of_birth": "08/05/1978",
+      "citizenship": "BRD",
+      "street": "Wirthring 84",
+      "city": "90422 Zabens",
+      "ssn": "993-15-1365",
+      "phone": "(532) 610-0085",
+      "email": "alexandra.meyer@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-039",
+    "scenario": "missing_dob",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "rei_capital_growth",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/22d36a37-bb90-49b1-b186-c61e9023bbb9-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/22d36a37-bb90-49b1-b186-c61e9023bbb9-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Hornich",
+      "given_names": "Larissa Nelly Maike",
+      "date_of_birth": "1960-10-24",
+      "nationality": "BRD",
+      "document_number": "KM989DR0413",
+      "expiry_date": "2030-12-05",
+      "street": "Sinaida-Zorbach-Platz 553",
+      "city": "99288 Lotten",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDKM989DR04<130<<<<<<<<<<<<",
+        "6010243F3005121BRD<<<<<<<<<<<6",
+        "HORNICH<<LARISSA<NELLY<MAIKE<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Larissa Nelly Maike Hornich",
+      "date_of_birth": "",
+      "citizenship": "BRD",
+      "street": "Sinaida-Zorbach-Platz 553",
+      "city": "99288 Lotten",
+      "ssn": "918-48-1794",
+      "phone": "(771) 961-1459",
+      "email": "larissa.hornich@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-040",
+    "scenario": "dob_mismatch",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_B",
+    "form": "commune_omni_fund",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_B/299061af-0904-41a5-bcad-12252df269fe-PP_TD3_B-front.jpg"
+    },
+    "id": {
+      "surname": "Marques",
+      "given_names": "Rui Fábio",
+      "date_of_birth": "2001-01-17",
+      "nationality": "VAL",
+      "document_number": "BB7R2MP55",
+      "expiry_date": "2028-09-18",
+      "street": "88853 Linda Viaduct Suite 338",
+      "city": "Kellytown",
+      "address_on_id": false,
+      "mrz": [
+        "P<VALMARQUES<<RUI<FABIO<<<<<<<<<<<<<<<<<<<<<",
+        "BB7R2MP559VAL0101170M2809182<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Rui Fabio Marques",
+      "date_of_birth": "01/17/2003",
+      "citizenship": "VAL",
+      "street": "88853 Linda Viaduct Suite 338",
+      "city": "Kellytown",
+      "ssn": "959-52-4918",
+      "phone": "(318) 627-2533",
+      "email": "rui.marques@example.com"
+    }
+  }
+]

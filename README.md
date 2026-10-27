@@ -41,9 +41,9 @@ document is composited onto a real photo or scan of an ID (the real document is 
 position; signatures and numbers inpainted; every image reviewed by the authors for leaked personal data).
 So the backgrounds, e.g. the facing page of a passport booklet, are real imagery; the identity is not.
 
-**What's on GitHub:** `samples/` holds 6 investors (3 passports, 3 ID cards). Every ID image is cropped
-to the fake document's own corners, so none of the real background is left. The full set of
-~400 images is downloaded by each person and never committed.
+**What's on GitHub:** all 40 investors in `data/demo/`, plus 6 of them in `samples/` with the IDs cropped
+for a quick run. Maples confirmed that data from public online sources is fine to use. The DocXPand
+images in this repo keep their licence (CC BY-NC-SA 4.0): credit the authors, non-commercial use only.
 
 <p>
   <img src="samples/INV-002/upload_1.jpg" height="210" alt="Fictional passport (DocXPand), cropped">
@@ -67,19 +67,19 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**2. Run on the samples (~2 min, nothing to download)**
+**2. Run it (nothing to download, the data is in the repo)**
 
 ```bash
-python run_pipeline.py                 # uses samples/ → writes output/kyc_tracker.xlsx
+python run_pipeline.py                 # all 40 investors (~10 min) → writes output/kyc_tracker.xlsx
+python run_pipeline.py samples         # or just the 6 samples (~2 min)
 jupyter notebook notebooks/            # start with results.ipynb
 ```
 
-**3. Optional: the full 40-investor set (~1 hour, mostly download)**
+**3. Only if you want to rebuild the test data (~1 hour, mostly download)**
 
 ```bash
 python -m prepare.docxpand             # streams ~18 GB, keeps ~400 IDs; safe to stop and rerun
-python -m prepare.build_demo           # 40 investors into data/demo/
-python run_pipeline.py                 # now uses data/demo/ automatically (~10 min)
+python -m prepare.build_demo           # rebuilds the 40 investors in data/demo/
 ```
 
 ## Repo layout
@@ -131,8 +131,8 @@ maples_kyc_poc/
 │                          issues, makes pages look scanned or photographed, writes the answer key.
 │                          `--samples` copies 6 of them into samples/, cropped
 │
-├── samples/               6 ready-made investors + answer key, so the pipeline runs straight after
-│                          cloning. ID images cropped to the fake document (no real background)
+├── data/demo/             The 40 test investors (INV-001 … INV-040) + labels.json, the answer key
+├── samples/               6 of those investors with the ID images cropped, for a quick 2-minute run
 ├── data/sec_forms/        The 4 blank SEC subscription forms (public filings, no personal data),
 │                          committed so nobody has to download them
 ├── requirements.txt       Python packages
@@ -145,9 +145,7 @@ maples_kyc_poc/
 ```
 ├── .venv/                 Your Python environment (~1 GB)
 ├── data/
-│   ├── external/          Downloads: DocXPand images + labels. DocXPand images sit on
-│   │                      real passport backgrounds, so they must never go on GitHub
-│   └── demo/              The 40 built investors (INV-001 … INV-040) + labels.json, the answer key
+│   └── external/          Only if you rebuild the data: the raw DocXPand download (~400 images)
 ├── output/
 │   └── kyc_tracker.xlsx   The tracker from the last run
 └── __pycache__/           Python's compiled-file cache, recreated automatically; ignore it
@@ -158,18 +156,17 @@ maples_kyc_poc/
 - Extractors return a plain dict `{field: value}`. Validated fields are records
   `{document, field, value, light, sources, note}`. Keep those shapes and new methods plug in.
 - Branch per task, pull request to merge, one teammate reviews.
-- Never commit `data/external/`, `data/demo/` or `output/` (regenerate instead). DocXPand images
-  are composited on real passport backgrounds; only the cropped images in `samples/` go on GitHub.
+- Don't commit `data/external/` (a large raw download) or `output/` (regenerated on every run).
 
 ## Where the photos are
 
-- **On GitHub: `samples/`.** 6 investors, one folder each (`samples/INV-001/` ...). Open any `upload_*.jpg`
+Everything is in the repo; cloning it gets you all of it.
+
+- **All 40 investors: `data/demo/`.** One folder each (`data/demo/INV-001/` ...). Open any `upload_*.jpg`
   to see an ID or a photographed subscription page; `upload_*.pdf` files are digital or scanned agreements.
-  `samples/labels.json` is the answer key. This is all you need to run the pipeline and the notebooks.
-- **The full 40 investors: `data/demo/`, not on GitHub.** These images still show the real passport
-  backgrounds, so they are shared privately. Ask Miles for the zip and unzip it in the repo root
-  (you should get `data/demo/INV-001/` ...). The pipeline and notebooks then use it automatically.
-  Or build it yourself (step 3 of "Run it", ~1 hour).
+  `data/demo/labels.json` is the answer key. The pipeline and notebooks use this folder by default.
+- **6 quick examples: `samples/`.** The same kind of files for 6 of those investors, with the IDs
+  cropped to the document. Use it for a 2-minute run (`python run_pipeline.py samples`).
 - **Blank subscription forms: `data/sec_forms/`.** The 4 SEC forms we fill in, before any details are added.
 
 ## Next steps

@@ -11,9 +11,9 @@ EXTERNAL = DATA / "external"     # downloaded public data (not committed, see pr
 DOCXPAND = EXTERNAL / "docxpand"
 SEC_DOWNLOADS = EXTERNAL / "sec_subscriptions"
 SEC_FORMS = DATA / "sec_forms"   # the 4 blank forms, committed: public filings, no personal data
-DEMO = DATA / "demo"             # built by prepare/build_demo.py (not committed)
-SAMPLES = Path("samples")        # a few demo investors, IDs cropped to the fake document (committed)
-DATASET = DEMO if (DEMO / "labels.json").exists() else SAMPLES  # full set if built, else the samples
+DEMO = DATA / "demo"             # the 40 investors, built by prepare/build_demo.py (committed)
+SAMPLES = Path("samples")        # 6 of them with IDs cropped, for a quick run (committed)
+DATASET = DEMO if (DEMO / "labels.json").exists() else SAMPLES  # full set unless someone removed it
 OUTPUT = Path("output")
 
 # Business rules (Maples' Cayman/CIMA matrix; confirm with the client)
