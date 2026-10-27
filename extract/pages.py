@@ -42,6 +42,13 @@ def text_layer_words(path):
     return words
 
 
+def ocr_size(img, target=2400):
+    """Small photos have characters a few pixels tall; huge photos just make Tesseract slow.
+    Bring every image to the same working size."""
+    scale = target / max(img.size)
+    return img.resize((int(img.width * scale), int(img.height * scale))) if abs(scale - 1) > 0.05 else img
+
+
 def flatten_lighting(img):
     """Divide out the background (shadows, light gradients from phone photos) before OCR."""
     gray = ImageOps.grayscale(img)
@@ -63,15 +70,16 @@ def deskew(img):
 
 
 def prepare_for_ocr(img):
-    return deskew(flatten_lighting(img))
+    return deskew(flatten_lighting(ocr_size(img)))
 
 
 @lru_cache(maxsize=64)
 def ocr_words(path):
     """Tesseract words across all pages, stacked top to bottom like text_layer_words."""
     words, offset = [], 0
-    for img in page_images(path):
-        data = pytesseract.image_to_data(prepare_for_ocr(img), output_type=pytesseract.Output.DICT)
+    for page in page_images(path):
+        img = prepare_for_ocr(page)
+        data = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT)
         for i, text in enumerate(data["text"]):
             if text.strip() and float(data["conf"][i]) > 0:
                 words.append({"text": text, "x0": data["left"][i], "y0": data["top"][i] + offset,

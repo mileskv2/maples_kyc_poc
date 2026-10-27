@@ -1,6 +1,7 @@
 """Run the pipeline on every investor folder and write the analyst tracker.
 
-    python run_pipeline.py            # all investors in data/demo
+    python run_pipeline.py            # data/demo if you built it, otherwise the committed samples
+    python run_pipeline.py samples    # the committed samples, even if data/demo exists
     python run_pipeline.py 10         # only the first 10 (quick check)
 
 Each folder holds an investor's uploads with neutral names. The pipeline classifies each file,
@@ -11,7 +12,7 @@ import json
 import sys
 
 from classify import classify
-from config import DEMO, OUTPUT, TODAY
+from config import DATASET, OUTPUT, SAMPLES, TODAY
 from evaluate import evaluate
 from extract.id_document import read_id_document
 from extract.subscription import read_subscription
@@ -68,12 +69,12 @@ def case_status(records):
     return "red" if "red" in lights else "amber" if "amber" in lights else "green"
 
 
-def main(limit=None):
-    labels = json.loads((DEMO / "labels.json").read_text())[:limit]
+def main(folder=DATASET, limit=None):
+    labels = json.loads((folder / "labels.json").read_text())[:limit]
 
     results = []
     for truth in labels:
-        files, records, raw = process_investor(DEMO / truth["investor_id"], truth)
+        files, records, raw = process_investor(folder / truth["investor_id"], truth)
         results.append({"truth": truth, "files": files, "records": records, "raw": raw,
                         "status": case_status(records)})
         print(f"{truth['investor_id']}  {results[-1]['status']:5}  {truth['id_kind']:8} "
@@ -90,4 +91,8 @@ def main(limit=None):
 
 
 if __name__ == "__main__":
-    main(int(sys.argv[1]) if len(sys.argv) > 1 else None)
+    arg = sys.argv[1] if len(sys.argv) > 1 else ""
+    if arg == "samples":
+        main(folder=SAMPLES)
+    else:
+        main(limit=int(arg) if arg else None)

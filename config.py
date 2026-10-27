@@ -9,8 +9,11 @@ TODAY = date(2026, 10, 20)  # fixed so results are reproducible (demo day)
 DATA = Path("data")
 EXTERNAL = DATA / "external"     # downloaded public data (not committed, see prepare/)
 DOCXPAND = EXTERNAL / "docxpand"
-SEC_FORMS = EXTERNAL / "sec_subscriptions"
+SEC_DOWNLOADS = EXTERNAL / "sec_subscriptions"
+SEC_FORMS = DATA / "sec_forms"   # the 4 blank forms, committed: public filings, no personal data
 DEMO = DATA / "demo"             # built by prepare/build_demo.py (not committed)
+SAMPLES = Path("samples")        # a few demo investors, IDs cropped to the fake document (committed)
+DATASET = DEMO if (DEMO / "labels.json").exists() else SAMPLES  # full set if built, else the samples
 OUTPUT = Path("output")
 
 # Business rules (Maples' Cayman/CIMA matrix; confirm with the client)

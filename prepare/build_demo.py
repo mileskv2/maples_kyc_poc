@@ -1,16 +1,21 @@
 """Build the demo set: one folder per investor holding an ID document and a filled subscription agreement.
 
-    python -m prepare.build_demo
+    python -m prepare.build_demo              # 40 investors into data/demo/ (not committed)
+    python -m prepare.build_demo --samples    # copy a few of them into samples/ (committed)
 
 Each investor is a DocXPand person (fictional ID on a real photo background). We fill one of the
 real SEC subscription forms with that same person's details, plant a few issues, then make the
 pages look scanned or photographed. Files get neutral names, so the pipeline must work out
 which document is which.
+
+Samples: DocXPand pastes each fake document onto a photo of a real ID. For the committed samples we
+crop every ID image to the fake document's own corners, so none of the real background remains.
 """
 
 import json
 import random
 import shutil
+import sys
 import unicodedata
 from datetime import datetime
 
@@ -21,7 +26,7 @@ from augraphy import (Brightness, Geometric, InkBleed, Jpeg, LightingGradient, N
 from faker import Faker
 from PIL import Image
 
-from config import DEMO, DOCXPAND, N_INVESTORS, SEC_FORMS, SEED, TODAY
+from config import DEMO, DOCXPAND, N_INVESTORS, SAMPLES, SEC_FORMS, SEED, TODAY
 from prepare.sec_forms import FILL_SPOTS
 
 ID_TEMPLATES = {"PP_TD3_A": "passport", "PP_TD3_B": "passport", "PP_TD3_C": "passport",
@@ -139,7 +144,7 @@ def underlines_after(page, label):
 
 
 def fill_form(form, values, out_path):
-    doc = pymupdf.open(SEC_FORMS / "blank" / f"{form}.pdf")
+    doc = pymupdf.open(SEC_FORMS / f"{form}.pdf")
     spots = dict(FILL_SPOTS[form])
     style = spots.pop("style")
     for field, spot in spots.items():
@@ -226,11 +231,12 @@ def main():
         condition = random.choice(CONDITIONS)
 
         # Neutral file names: the classifier has to tell the documents apart
-        files = {}
+        files, sources = {}, {}
         for n, src in enumerate(person["images"], start=1):
             name = f"upload_{n}.jpg"
             shutil.copy(DOCXPAND / "images" / src, folder / name)
             files[name] = person["kind"]
+            sources[name] = src
         values = subscription_values(person, scenario)
         fill_form(form, values, folder / "filled.pdf")
         for name in save_subscription(folder / "filled.pdf", condition, folder, len(files) + 1):
@@ -239,11 +245,53 @@ def main():
 
         labels.append({"investor_id": investor_id, "scenario": scenario, "id_kind": person["kind"],
                        "id_template": person["template"], "form": form, "condition": condition,
-                       "files": files, "id": person["truth"], "subscription": values})
+                       "files": files, "id_sources": sources, "id": person["truth"], "subscription": values})
         print(f"{investor_id}  {person['kind']:8}  {form:24}  {condition:8}  {scenario}")
 
     (DEMO / "labels.json").write_text(json.dumps(labels, indent=2, ensure_ascii=False))
 
 
+# ---------- Committed samples ----------
+
+# One per passport design plus ID cards; a mix of clean files and planted issues
+SAMPLE_COUNT = {"PP_TD3_A": 1, "PP_TD3_B": 1, "PP_TD3_C": 1, "ID_CARD_TD1_A": 3}
+
+
+def crop_to_document(src, corners, margin=0.01):
+    """Keep only the fake document: its corners come with the DocXPand labels."""
+    img = Image.open(DOCXPAND / "images" / src)
+    xs = [float(c["x"]) for c in corners.values()]
+    ys = [float(c["y"]) for c in corners.values()]
+    box = (max(min(xs) - margin, 0) * img.width, max(min(ys) - margin, 0) * img.height,
+           min(max(xs) + margin, 1) * img.width, min(max(ys) + margin, 1) * img.height)
+    return img.crop(tuple(int(v) for v in box))
+
+
+def make_samples():
+    labels = json.loads((DEMO / "labels.json").read_text())
+    corners = {d["filename"]: d["annotations"][0]["position"]
+               for d in json.loads((DOCXPAND / "labels.json").read_text())["documents"]}
+    if SAMPLES.exists():
+        shutil.rmtree(SAMPLES)
+    picked, seen_scenarios = [], set()
+    for template, count in SAMPLE_COUNT.items():
+        candidates = [l for l in labels if l["id_template"] == template]
+        for _ in range(count):
+            # Prefer a scenario we haven't shown yet, so the samples cover different flags
+            fresh = [l for l in candidates if l["scenario"] not in seen_scenarios]
+            choice = (fresh or candidates)[0]
+            candidates.remove(choice)
+            picked.append(choice)
+            seen_scenarios.add(choice["scenario"])
+
+    for l in picked:
+        folder = SAMPLES / l["investor_id"]
+        shutil.copytree(DEMO / l["investor_id"], folder)
+        for name, src in l["id_sources"].items():
+            crop_to_document(src, corners[src]).save(folder / name, quality=90)
+        print(f"{l['investor_id']}  {l['id_template']:14} {l['condition']:8} {l['scenario']}")
+    (SAMPLES / "labels.json").write_text(json.dumps(picked, indent=2, ensure_ascii=False))
+
+
 if __name__ == "__main__":
-    main()
+    make_samples() if "--samples" in sys.argv else main()

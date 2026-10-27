@@ -1,5 +1,8 @@
 """Download real, blank subscription agreements from SEC EDGAR and keep the investor-information page.
 
+You don't need to run this: the result is already committed in data/sec_forms/. It's kept to show
+where the forms came from, and to add new forms later:
+
     SEC_CONTACT="you@example.com" python -m prepare.sec_forms
 
 These are Reg A offering exhibits (form type EX1A-4): public US documents, filed blank.
@@ -14,7 +17,7 @@ import urllib.request
 
 import pymupdf
 
-from config import SEC_FORMS
+from config import SEC_DOWNLOADS, SEC_FORMS
 
 # name: (EDGAR path, pages holding the investor's details)
 FORMS = {
@@ -83,19 +86,19 @@ def html_to_pdf(html, out_path):
 
 
 def main():
-    (SEC_FORMS / "raw").mkdir(parents=True, exist_ok=True)
-    (SEC_FORMS / "blank").mkdir(parents=True, exist_ok=True)
+    (SEC_DOWNLOADS / "raw").mkdir(parents=True, exist_ok=True)
+    SEC_FORMS.mkdir(parents=True, exist_ok=True)
     for name, (path, pages) in FORMS.items():
-        raw_html = SEC_FORMS / "raw" / f"{name}.htm"
+        raw_html = SEC_DOWNLOADS / "raw" / f"{name}.htm"
         if not raw_html.exists():
             raw_html.write_text(download(path), encoding="latin-1")
             time.sleep(0.5)  # stay well under SEC's rate limit
-        full_pdf = SEC_FORMS / "raw" / f"{name}.pdf"
+        full_pdf = SEC_DOWNLOADS / "raw" / f"{name}.pdf"
         html_to_pdf(raw_html.read_text(encoding="latin-1"), full_pdf)
 
         blank = pymupdf.open()
         blank.insert_pdf(pymupdf.open(full_pdf), from_page=pages[0], to_page=pages[-1])
-        blank.save(SEC_FORMS / "blank" / f"{name}.pdf")
+        blank.save(SEC_FORMS / f"{name}.pdf")
         print(f"{name}: kept page(s) {pages}")
 
 

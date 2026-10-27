@@ -11,12 +11,13 @@ A check digit alone can't tell 'G' from '6', so green later needs both methods t
 import re
 import unicodedata
 from datetime import datetime
+from functools import lru_cache
 
 import pytesseract
 from PIL import ImageOps
 
 from extract.mrz import parse_td1, parse_td3
-from extract.pages import flatten_lighting, page_images
+from extract.pages import flatten_lighting, ocr_size, page_images
 
 MRZ_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<"
 MRZ_LINE = re.compile(r"^[A-Z0-9<]{26,50}$")
@@ -81,10 +82,11 @@ def read_mrz(img):
     lines = mrz_lines(img)
     # Passport: line 1 starts 'P<'; line 2 follows. Tesseract often drops long '<' runs, so line 2
     # may come out short; its first 28 characters are what matter.
-    starts = [i for i, l in enumerate(lines[:-1]) if "P<" in l[:3] and len(lines[i + 1]) >= 28]
+    # 'P' then one filler character; OCR often reads that '<' as S or K, so accept any character there
+    starts = [i for i, l in enumerate(lines[:-1]) if re.match(r"^.?P.[A-Z]{3}", l) and len(lines[i + 1]) >= 28]
     if starts:
         line1, line2 = lines[starts[-1]], lines[starts[-1] + 1]
-        line1 = line1[line1.find("P<"):]
+        line1 = "P<" + line1[line1.find("P") + 2:]
         shift = min(max(len(line2) - 44, 0), 2)  # a stray leading character
         candidates = [rebuild_td3_line2(line2[i:]) for i in range(shift + 1)]
         fields, checks = max((parse_td3(tidy_filler(line1, 44), c) for c in candidates),
@@ -102,16 +104,26 @@ def read_mrz(img):
     return None, {}, {}
 
 
-def find_mrz(img):
-    """Photos come sideways or upside down: try each rotation, stop when the check digits all pass."""
+def mrz_score(result):
+    """More passing check digits is better; a name found breaks ties (the last line is the faintest)."""
+    fmt, fields, checks = result[:3]
+    return (fmt is not None, sum(checks.values()), bool(fields.get("surname")))
+
+
+def find_mrz(img, original=None):
+    """Photos come sideways or upside down: try each rotation, stop when the check digits all pass.
+    Lighting correction can wash out faint print, so the uncorrected image gets a turn too."""
     best = (None, {}, {}, img)
-    for angle in (0, 90, 270, 180):
-        rotated = img.rotate(angle, expand=True, fillcolor=255) if angle else img
-        fmt, fields, checks = read_mrz(rotated)
-        if fmt and (best[0] is None or sum(checks.values()) > sum(best[2].values())):
-            best = (fmt, fields, checks, rotated)
-        if checks and all(checks.values()):
-            break
+    for candidate in (img, original):
+        if candidate is None:
+            continue
+        for angle in (0, 90, 270, 180):
+            rotated = candidate.rotate(angle, expand=True, fillcolor=255) if angle else candidate
+            result = (*read_mrz(rotated), rotated)
+            if mrz_score(result) > mrz_score(best):
+                best = result
+            if best[2] and all(best[2].values()) and best[1].get("surname"):
+                return best
     return best
 
 
@@ -164,22 +176,27 @@ def confirm_in_print(mrz_fields, text):
     return found
 
 
-def enlarge(img, target=2400):
-    """MRZ characters in a small phone photo are a few pixels tall; Tesseract wants ~30."""
-    scale = target / max(img.size)
-    return img.resize((int(img.width * scale), int(img.height * scale))) if scale > 1 else img
+@lru_cache(maxsize=64)
+def read_side(path):
+    """MRZ and upright image for one file. Cached: classification and extraction both need it."""
+    original = ocr_size(page_images(path)[0])
+    img = flatten_lighting(original)
+    fmt, fields, checks, rotated = find_mrz(img, original)
+    if fmt:
+        return fmt, fields, checks, rotated, 0
+    # No MRZ on this side (an ID card front): turn it upright using its printed labels instead
+    upright, hits = upright_by_labels(img)
+    return None, {}, {}, upright, hits
 
 
 def read_id_document(paths):
     """paths: one passport image, or an ID card's sides in any order."""
-    images = [flatten_lighting(enlarge(page_images(p)[0])) for p in paths]
     fmt, fields, checks, upright = None, {}, {}, []
-    for img in images:  # the MRZ is on the passport data page or the back of the card
-        found = find_mrz(img)
-        if found[0] and not fmt:
-            fmt, fields, checks = found[:3]
-        # No MRZ on this side (an ID card front): turn it upright using its printed labels instead
-        upright.append(found[3] if found[0] else upright_by_labels(img)[0])
+    for path in paths:  # the MRZ is on the passport data page or the back of the card
+        side_fmt, side_fields, side_checks, img, _ = read_side(path)
+        upright.append(img)
+        if side_fmt and not fmt:
+            fmt, fields, checks = side_fmt, side_fields, side_checks
     printed_text = "\n".join(pytesseract.image_to_string(img) for img in upright)
     # Drop the MRZ itself from the printed text, or the MRZ would end up confirming its own misreads
     printed_text = "\n".join(l for l in printed_text.splitlines() if l.count("<") < 2)

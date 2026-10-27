@@ -17,9 +17,11 @@ For now: two document kinds (ID: passport or ID card; subscription agreement). M
 
 - **Synthetic and public data only.** Maples will not share client documents. Never add real people,
   real passports, client names or anything that looks like client data. Flag it if you see some.
-- **Never commit images or data.** `data/` and `output/` are gitignored. DocXPand images are fictional
-  documents composited onto *real* passport/ID photos, so they must never go on GitHub. Commit
-  notebooks without outputs (outputs would embed those images).
+- **Never commit raw images or data.** `data/external/`, `data/demo/` and `output/` are gitignored.
+  DocXPand images are fictional documents composited onto *real* passport/ID photos, so uncropped
+  ones must never go on GitHub. Committed data: `data/sec_forms/` (4 blank public SEC forms) and
+  `samples/` (6 investors, ID images cropped to the fake document by `build_demo.py --samples`).
+  Commit notebooks without outputs (outputs would embed images).
 - **SEC forms: blank only.** Executed subscription agreements on EDGAR contain real investors' details.
 - **Proof of concept, not production.** No auth, deployment, databases or heavy infrastructure.
   Push back on scope creep.
@@ -84,11 +86,12 @@ Demo set: 40 investors in `data/demo/INV-xxx/` with neutral file names (`upload_
 ## Commands
 
 ```bash
-python -m prepare.docxpand                                  # ~1 hour stream, resumable
-SEC_CONTACT="you@example.com" python -m prepare.sec_forms   # SEC requires a contact email
-python -m prepare.build_demo                                # 40 investors → data/demo/
-python run_pipeline.py                                      # ~5 min → output/kyc_tracker.xlsx
-python run_pipeline.py 5                                    # first 5 investors only (quick check)
+python run_pipeline.py                  # data/demo/ if built, else samples/ (~2 min) → output/kyc_tracker.xlsx
+python run_pipeline.py samples          # force the samples
+python run_pipeline.py 5                # first 5 investors only (quick check)
+python -m prepare.docxpand              # ~1 hour stream, resumable
+python -m prepare.build_demo            # 40 investors → data/demo/
+python -m prepare.build_demo --samples  # refresh samples/ from data/demo/ (crops the IDs)
 ```
 Requires the Tesseract binary (`brew install tesseract`) plus `pip install -r requirements.txt`.
 
@@ -99,20 +102,22 @@ layouts, digital / scanned / photo), 96 files with neutral names:
 
 | Metric | Result |
 |---|---|
-| Files classified correctly | 94/96 |
-| Green precision (green fields that are correct) | 238/239 |
-| Wrong values caught (amber/red, not green) | 48/49 |
-| Planted issues flagged | 18/21 |
+| Files classified correctly | 93/96 |
+| Green precision (green fields that are correct) | 265/265 |
+| Wrong values caught (amber/red, not green) | 50/50 |
+| Planted issues flagged | 19/21 |
 | Expired IDs flagged red | 4/4 |
-| Field accuracy (final value) | 410/459 |
+| Field accuracy (final value) | 432/482 |
 
-Single-method accuracy: subscription text layer 95%; subscription OCR 90% digital, 90% scanned,
-79% photo; passport MRZ 63%; ID-card MRZ 43%. Takeaway: the traffic light is trustworthy (green is
-almost always right) but ID photos still leave a lot of amber for analysts.
+Single-method accuracy: subscription text layer 95%; subscription OCR 92% digital, 90% scanned,
+80% photo; passport MRZ 69%; ID-card MRZ 57%. Takeaway: the traffic light is trustworthy (no wrong
+green) but ID photos still leave a lot of amber for analysts.
 
-Known weak spots: ID MRZ on small/tilted photos; O/0 in document numbers; a partial OCR'd street can
-match the ID and turn green (1 case); a full run takes ~10 min because IDs are OCR'd twice
-(classification and extraction).
+Samples (`python run_pipeline.py samples`, ~2 min): 15/15 files classified, 45/45 greens correct,
+4/4 planted issues flagged.
+
+Known weak spots: ID MRZ on small/tilted photos; O/0 in document numbers; a full 40-investor run
+takes ~10 min.
 
 ## Next tasks, in order
 

@@ -1,0 +1,251 @@
+[
+  {
+    "investor_id": "INV-002",
+    "scenario": "clean",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_A",
+    "form": "red_oak_capital_fund_vi",
+    "condition": "digital",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_A/3f85c867-41ce-4a4b-b635-4e0b2a7fe74f-PP_TD3_A-front.jpg"
+    },
+    "id": {
+      "surname": "Vidal",
+      "given_names": "Daniel Thibault",
+      "date_of_birth": "1947-10-01",
+      "nationality": "GAL",
+      "document_number": "MA4O0PC73",
+      "expiry_date": "2031-08-06",
+      "street": "ruelle Dominique Benoit",
+      "city": "17656 Lebreton",
+      "address_on_id": true,
+      "mrz": [
+        "P<GALVIDAL<<DANIEL<THIBAULT<<<<<<<<<<<<<<<<<",
+        "MA4O0PC739GAL4701109M3106084<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Daniel Thibault Vidal",
+      "date_of_birth": "10/01/1947",
+      "citizenship": "GAL",
+      "street": "ruelle Dominique Benoit",
+      "city": "17656 Lebreton",
+      "ssn": "928-70-2971",
+      "phone": "(270) 453-4577",
+      "email": "daniel.vidal@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-001",
+    "scenario": "address_mismatch",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_B",
+    "form": "cws_investments",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_B/a470bf1c-9d56-4336-b125-5114864e997a-PP_TD3_B-front.jpg"
+    },
+    "id": {
+      "surname": "Matias",
+      "given_names": "Kelly Vitória",
+      "date_of_birth": "1970-02-03",
+      "nationality": "VAL",
+      "document_number": "AI7S9DZ58",
+      "expiry_date": "2031-01-19",
+      "street": "2200 Danielle Locks Apt. 995",
+      "city": "East Michael",
+      "address_on_id": false,
+      "mrz": [
+        "P<VALMATIAS<<KELLY<VITORIA<<<<<<<<<<<<<<<<<<",
+        "AI7S9DZ585VAL7003022F3101193<<<<<<<<<<<<<<<8"
+      ]
+    },
+    "subscription": {
+      "full_name": "Kelly Vitoria Matias",
+      "date_of_birth": "02/03/1970",
+      "citizenship": "VAL",
+      "street": "5346 Mcgrath Springs",
+      "city": "East Michael",
+      "ssn": "954-92-2389",
+      "phone": "(137) 832-5674",
+      "email": "kelly.matias@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-005",
+    "scenario": "missing_dob",
+    "id_kind": "passport",
+    "id_template": "PP_TD3_C",
+    "form": "cws_investments",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "passport",
+      "upload_2.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "PP_TD3_C/77a30096-20c1-449b-94c1-5a840a281734-PP_TD3_C-front.jpg"
+    },
+    "id": {
+      "surname": "Jorlink",
+      "given_names": "Cornelis Ben",
+      "date_of_birth": "1956-06-08",
+      "nationality": "LEM",
+      "document_number": "KM6H8YK60",
+      "expiry_date": "2032-05-16",
+      "street": "16877 Krista Fork Apt. 281",
+      "city": "Millerton",
+      "address_on_id": false,
+      "mrz": [
+        "P<LEMJORLINK<<CORNELIS<BEN<<<<<<<<<<<<<<<<<<",
+        "KM6H8YK607LEM5608065M3205161<<<<<<<<<<<<<<<6"
+      ]
+    },
+    "subscription": {
+      "full_name": "Cornelis Ben Jorlink",
+      "date_of_birth": "",
+      "citizenship": "LEM",
+      "street": "16877 Krista Fork Apt. 281",
+      "city": "Millerton",
+      "ssn": "953-63-4207",
+      "phone": "(491) 923-2752",
+      "email": "cornelis.jorlink@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-012",
+    "scenario": "name_mismatch",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "commune_omni_fund",
+    "condition": "scanned",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.pdf": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/261c477e-e235-45e7-81fa-d02454b51c95-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/261c477e-e235-45e7-81fa-d02454b51c95-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Gehringer",
+      "given_names": "Denise",
+      "date_of_birth": "1998-03-15",
+      "nationality": "BRD",
+      "document_number": "TW767SF8666",
+      "expiry_date": "2028-09-22",
+      "street": "Paulo-Biggen-Platz 2",
+      "city": "01891 Bad Krüden",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDTW767SF86<662<<<<<<<<<<<<",
+        "9803156F2809229BRD<<<<<<<<<<<4",
+        "GEHRINGER<<DENISE<<<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Denise Townsend",
+      "date_of_birth": "03/15/1998",
+      "citizenship": "BRD",
+      "street": "Paulo-Biggen-Platz 2",
+      "city": "01891 Bad Kruden",
+      "ssn": "928-63-6635",
+      "phone": "(362) 515-5788",
+      "email": "denise.gehringer@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-024",
+    "scenario": "dob_mismatch",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "commune_omni_fund",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/65563c60-acba-47e1-a367-73daa0f11ed3-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/65563c60-acba-47e1-a367-73daa0f11ed3-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Schmid",
+      "given_names": "Ester Amela",
+      "date_of_birth": "1996-07-13",
+      "nationality": "BRD",
+      "document_number": "ET620YE3288",
+      "expiry_date": "2029-10-29",
+      "street": "Helmut-Drewes-Weg 0",
+      "city": "63989 Ton",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDET620YE32<888<<<<<<<<<<<<",
+        "9607136F2910297BRD<<<<<<<<<<<6",
+        "SCHMID<<ESTER<AMELA<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Ester Amela Schmid",
+      "date_of_birth": "07/13/1997",
+      "citizenship": "BRD",
+      "street": "Helmut-Drewes-Weg 0",
+      "city": "63989 Ton",
+      "ssn": "960-35-1110",
+      "phone": "(492) 790-5597",
+      "email": "ester.schmid@example.com"
+    }
+  },
+  {
+    "investor_id": "INV-009",
+    "scenario": "clean",
+    "id_kind": "id_card",
+    "id_template": "ID_CARD_TD1_A",
+    "form": "cws_investments",
+    "condition": "photo",
+    "files": {
+      "upload_1.jpg": "id_card",
+      "upload_2.jpg": "id_card",
+      "upload_3.jpg": "subscription"
+    },
+    "id_sources": {
+      "upload_1.jpg": "ID_CARD_TD1_A/bdc33cad-30b1-46cf-bf92-8ae5d1b8b151-ID_CARD_TD1_A-front.jpg",
+      "upload_2.jpg": "ID_CARD_TD1_A/bdc33cad-30b1-46cf-bf92-8ae5d1b8b151-ID_CARD_TD1_A-back.jpg"
+    },
+    "id": {
+      "surname": "Noack",
+      "given_names": "Philipp",
+      "date_of_birth": "1928-12-28",
+      "nationality": "BRD",
+      "document_number": "WA683FV5506",
+      "expiry_date": "2028-07-19",
+      "street": "Klingelhöfergasse 5/6",
+      "city": "82068 Stümen",
+      "address_on_id": true,
+      "mrz": [
+        "IDBRDWA683FV55<065<<<<<<<<<<<<",
+        "2812287M2807199BRD<<<<<<<<<<<2",
+        "NOACK<<PHILIPP<<<<<<<<<<<<<<<<"
+      ]
+    },
+    "subscription": {
+      "full_name": "Philipp Noack",
+      "date_of_birth": "12/28/1928",
+      "citizenship": "BRD",
+      "street": "Klingelhofergasse 5/6",
+      "city": "82068 Stumen",
+      "ssn": "993-68-9092",
+      "phone": "(372) 890-2579",
+      "email": "philipp.noack@example.com"
+    }
+  }
+]
