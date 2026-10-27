@@ -37,7 +37,7 @@ For now: two document kinds (ID: passport or ID card; subscription agreement). M
 - Very brief docstrings (one line is usually enough).
 - Keep visuals few and sharp. No plots that don't earn their place.
 - Match the existing style of the repo before adding new patterns.
-- Commit messages: plain, no AI co-author trailers.
+- Commit messages: plain. Commits made with Claude Code end with a `Co-Authored-By: Claude` trailer.
 
 ## How the pipeline works
 
