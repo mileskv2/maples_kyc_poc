@@ -4,5 +4,4 @@ __pycache__/
 .DS_Store
 .ipynb_checkpoints/
 data/external/
-data/demo/
 output/

@@ -17,11 +17,11 @@ For now: two document kinds (ID: passport or ID card; subscription agreement). M
 
 - **Synthetic and public data only.** Maples will not share client documents. Never add real people,
   real passports, client names or anything that looks like client data. Flag it if you see some.
-- **Never commit raw images or data.** `data/external/`, `data/demo/` and `output/` are gitignored.
-  DocXPand images are fictional documents composited onto *real* passport/ID photos, so uncropped
-  ones must never go on GitHub. Committed data: `data/sec_forms/` (4 blank public SEC forms) and
-  `samples/` (6 investors, ID images cropped to the fake document by `build_demo.py --samples`).
-  Commit notebooks without outputs (outputs would embed images).
+- **What's committed.** `data/demo/` (the 40 investors), `samples/` (6 of them, IDs cropped) and
+  `data/sec_forms/` (4 blank public SEC forms). Maples confirmed (Oct 27, 2026) that anything from
+  public online sources is fine to use, including DocXPand images on real passport backgrounds.
+  Not committed: `data/external/` (the raw ~400-image download) and `output/`.
+  Commit notebooks without outputs (keeps diffs small and readable).
 - **SEC forms: blank only.** Executed subscription agreements on EDGAR contain real investors' details.
 - **Proof of concept, not production.** No auth, deployment, databases or heavy infrastructure.
   Push back on scope creep.
@@ -37,7 +37,7 @@ For now: two document kinds (ID: passport or ID card; subscription agreement). M
 - Very brief docstrings (one line is usually enough).
 - Keep visuals few and sharp. No plots that don't earn their place.
 - Match the existing style of the repo before adding new patterns.
-- Commit messages: plain, no AI co-author trailers.
+- Commit messages: plain. Commits made with Claude Code end with a `Co-Authored-By: Claude` trailer.
 
 ## How the pipeline works
 
@@ -86,7 +86,7 @@ Demo set: 40 investors in `data/demo/INV-xxx/` with neutral file names (`upload_
 ## Commands
 
 ```bash
-python run_pipeline.py                  # data/demo/ if built, else samples/ (~2 min) → output/kyc_tracker.xlsx
+python run_pipeline.py                  # all 40 in data/demo/ (~10 min) → output/kyc_tracker.xlsx
 python run_pipeline.py samples          # force the samples
 python run_pipeline.py 5                # first 5 investors only (quick check)
 python -m prepare.docxpand              # ~1 hour stream, resumable
@@ -136,4 +136,3 @@ takes ~10 min.
   "what if"; their answer tells us which number matters.)
 - 90 days vs "6 years" for proof of address.
 - LLM/API budget and any provider constraint (they use Microsoft Copilot).
-- Is a dataset composited on real ID backgrounds (DocXPand) acceptable to them for the demo?
