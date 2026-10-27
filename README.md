@@ -161,8 +161,25 @@ maples_kyc_poc/
 - Never commit `data/external/`, `data/demo/` or `output/` (regenerate instead). DocXPand images
   are composited on real passport backgrounds; only the cropped images in `samples/` go on GitHub.
 
+## Where the photos are
+
+- **On GitHub: `samples/`.** 6 investors, one folder each (`samples/INV-001/` ...). Open any `upload_*.jpg`
+  to see an ID or a photographed subscription page; `upload_*.pdf` files are digital or scanned agreements.
+  `samples/labels.json` is the answer key. This is all you need to run the pipeline and the notebooks.
+- **The full 40 investors: `data/demo/`, not on GitHub.** These images still show the real passport
+  backgrounds, so they are shared privately. Ask Miles for the zip and unzip it in the repo root
+  (you should get `data/demo/INV-001/` ...). The pipeline and notebooks then use it automatically.
+  Or build it yourself (step 3 of "Run it", ~1 hour).
+- **Blank subscription forms: `data/sec_forms/`.** The 4 SEC forms we fill in, before any details are added.
+
 ## Next steps
 
-1. Proof of address as a third document type.
-2. An LLM extractor as a third method, compared in the method-comparison sheet.
-3. Replace the SEC layouts with Maples' blank subscription form if received.
+1. **Show how much work it saves.** Today we show that green is always right (265/265). We should also
+   show how many fields end up green, because every amber field is one an analyst still checks by hand.
+   Right now that is about half.
+2. **Read ID photos better.** Most of the amber comes from Tesseract misreading ID photos, not from our
+   rules. Try a stronger reader as a third method (an LLM, or Microsoft's ID reader since Maples uses
+   Microsoft) and compare it side by side with the two we have.
+3. **Add proof of address** (utility bill or bank statement) and check it against the ID name and the
+   subscription address. That also lets us flag a missing document, not just a missing field.
+4. **Use Maples' real blank subscription form** once Jervis sends it, instead of the SEC forms.
