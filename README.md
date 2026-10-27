@@ -157,6 +157,8 @@ maples_kyc_poc/
   `{document, field, value, light, sources, note}`. Keep those shapes and new methods plug in.
 - Branch per task, pull request to merge, one teammate reviews.
 - Don't commit `data/external/` (a large raw download) or `output/` (regenerated on every run).
+- Only recommit `data/demo/` when the test data really changes: git keeps every version of every
+  image, so each rebuild adds ~60 MB to the repo for good.
 
 ## Where the photos are
 
