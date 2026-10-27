@@ -1,11 +1,11 @@
 # maples_kyc_poc — Maples KYC Document Extraction (Proof of Concept)
 
 McGill MMA Capstone with Maples Group, AML/KYC and Data Management.
-**Synthetic and public data only. 
+**Synthetic and public data only.**
 
 ## What this does
 
-This mimmicks an individual investor uploading an ID and a subscription agreement, as messy as real uploads are
+This mimics an individual investor uploading an ID and a subscription agreement, as messy as real uploads are
 (phone photos, scans, sideways, shadows). The pipeline then does:
 
 ```
@@ -30,7 +30,7 @@ and it can flag an `O`/`0` misread without saying which one is right.
 
 | Document | Source | Licence |
 |---|---|---|
-| Passports, ID cards | [DocXPand-25k](https://github.com/QuickSign/docxpand): fictional IDs with generated faces, photographed and scanned on real backgrounds, with an answer key for every field | CC BY-NC-SA 4.0 (non-commercial; images not committed) |
+| Passports, ID cards | [DocXPand-25k](https://github.com/QuickSign/docxpand): fictional IDs with generated faces, photographed and scanned on real backgrounds, with an answer key for every field | CC BY-NC-SA 4.0 (non-commercial, credit the authors) |
 | Subscription agreements | Blank Reg A subscription agreements (EX1A-4) from SEC EDGAR: Commune Omni Fund, CWS Investments, Red Oak Capital Fund VI, REI Capital Growth. Filled with the same synthetic person as the ID | Public filings |
 
 We only use **blank** SEC forms. Executed agreements filed with the SEC contain real investors' details.
@@ -41,10 +41,25 @@ document is composited onto a real photo or scan of an ID (the real document is 
 position; signatures and numbers inpainted; every image reviewed by the authors for leaked personal data).
 So the backgrounds, e.g. the facing page of a passport booklet, are real imagery; the identity is not.
 
+**What's on GitHub:** `samples/` holds 6 investors (3 passports, 3 ID cards). Every ID image is cropped
+to the fake document's own corners, so none of the real background is left. The full set of
+~400 images is downloaded by each person and never committed.
+
+<p>
+  <img src="samples/INV-002/upload_1.jpg" height="210" alt="Fictional passport (DocXPand), cropped">
+  <img src="samples/INV-012/upload_1.jpg" height="210" alt="Fictional ID card (DocXPand), cropped">
+  <img src="samples/INV-001/upload_2.jpg" height="210" alt="SEC subscription form filled with the same person, made to look phone-photographed">
+</p>
+
+*From `samples/`: a passport, an ID card, and a subscription agreement filled with the passport holder's
+details and made to look like a phone photo.*
+
 Planted issues: date of birth, name or address on the subscription differing from the ID,
 a date of birth left blank, and (from DocXPand itself) expired IDs.
 
-## Setup
+## Run it
+
+**1. Setup (once, ~5 min)**
 
 ```bash
 brew install tesseract                 # Windows: UB-Mannheim build; Linux: apt install tesseract-ocr
@@ -52,16 +67,20 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Build the data, then run
+**2. Run on the samples (~2 min, nothing to download)**
 
 ```bash
-python -m prepare.docxpand                         # streams ~18 GB, keeps ~400 IDs (takes about an hour)
-SEC_CONTACT="you@example.com" python -m prepare.sec_forms   # SEC asks for a contact email
-python -m prepare.build_demo                       # 40 investors into data/demo/
-python run_pipeline.py                             # writes output/kyc_tracker.xlsx
+python run_pipeline.py                 # uses samples/ → writes output/kyc_tracker.xlsx
+jupyter notebook notebooks/            # start with results.ipynb
 ```
 
-Then open the notebooks: `data_overview`, `id_extraction`, `subscription_extraction`, `results`.
+**3. Optional: the full 40-investor set (~1 hour, mostly download)**
+
+```bash
+python -m prepare.docxpand             # streams ~18 GB, keeps ~400 IDs; safe to stop and rerun
+python -m prepare.build_demo           # 40 investors into data/demo/
+python run_pipeline.py                 # now uses data/demo/ automatically (~10 min)
+```
 
 ## Repo layout
 
@@ -106,10 +125,16 @@ maples_kyc_poc/
 ├── prepare/               One-off scripts that build the test data. Not part of the pipeline:
 │   │                      the pipeline never imports them, and Maples would never need them
 │   ├── docxpand.py        Downloads a slice of DocXPand (the fake passports and ID cards)
-│   ├── sec_forms.py       Downloads the 4 blank SEC subscription forms; records where each blank is
+│   ├── sec_forms.py       How the 4 blank SEC forms were fetched; records where each blank is.
+│   │                      No need to run it: the forms are already in data/sec_forms/
 │   └── build_demo.py      Builds 40 investors: fills each form with the ID holder's details, plants
-│                          issues, makes pages look scanned or photographed, writes the answer key
+│                          issues, makes pages look scanned or photographed, writes the answer key.
+│                          `--samples` copies 6 of them into samples/, cropped
 │
+├── samples/               6 ready-made investors + answer key, so the pipeline runs straight after
+│                          cloning. ID images cropped to the fake document (no real background)
+├── data/sec_forms/        The 4 blank SEC subscription forms (public filings, no personal data),
+│                          committed so nobody has to download them
 ├── requirements.txt       Python packages
 ├── README.md              This file
 └── CLAUDE.md              Project brief and code-style rules (read by Claude Code, useful to humans too)
@@ -120,7 +145,7 @@ maples_kyc_poc/
 ```
 ├── .venv/                 Your Python environment (~1 GB)
 ├── data/
-│   ├── external/          Downloads: DocXPand images + labels, SEC forms. DocXPand images sit on
+│   ├── external/          Downloads: DocXPand images + labels. DocXPand images sit on
 │   │                      real passport backgrounds, so they must never go on GitHub
 │   └── demo/              The 40 built investors (INV-001 … INV-040) + labels.json, the answer key
 ├── output/
@@ -134,7 +159,7 @@ maples_kyc_poc/
   `{document, field, value, light, sources, note}`. Keep those shapes and new methods plug in.
 - Branch per task, pull request to merge, one teammate reviews.
 - Never commit `data/external/`, `data/demo/` or `output/` (regenerate instead). DocXPand images
-  are composited on real passport backgrounds and must stay off GitHub.
+  are composited on real passport backgrounds; only the cropped images in `samples/` go on GitHub.
 
 ## Next steps
 

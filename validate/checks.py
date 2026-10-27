@@ -152,11 +152,17 @@ def cross_check(id_records, id_raw, subscription_records):
             claim.update(light="amber", note=f"differs from ID ({id_value}); could be a reading error")
 
     # Address is printed on the ID but not in the MRZ: look for it in the ID's printed text
+    # The address is checked as a unit: if one line is junk or both read the same, OCR has shifted a
+    # line, and finding text on the ID proves nothing about which field it belongs to
+    street, city = (subs.get(f, {}).get("value") or "" for f in ("street", "city"))
+    address_read = len(street) >= 4 and len(city) >= 4 and not same(street, city)
     for field in ("street", "city"):
         claim = subs.get(field)
         if not claim or not claim["value"]:
             continue
-        if appears_in(claim["value"], id_raw["printed_text"]):
+        if not address_read:
+            claim.update(light="amber", note="address only partly read: confirm")
+        elif appears_in(claim["value"], id_raw["printed_text"]):
             claim.update(light="green", note=claim["note"] + "; also printed on ID")
         else:
             claim.update(light="amber", note="not found on the ID: confirm address")

@@ -10,8 +10,8 @@ Anything left over is 'unknown' and goes to an analyst.
 
 import pytesseract
 
-from extract.id_document import enlarge, find_mrz, upright_by_labels
-from extract.pages import flatten_lighting, full_text, page_images
+from extract.id_document import read_side
+from extract.pages import full_text
 
 SUBSCRIPTION_WORDS = ["subscriber", "subscription", "social security", "investor", "accredited", "joint owner",
                       "citizenship", "e-mail", "beneficial owner", "zip code", "telephone"]
@@ -27,14 +27,11 @@ def classify(path):
     if count_hits(full_text(path).lower(), SUBSCRIPTION_WORDS) >= 2:
         return "subscription", "subscription-agreement wording"
 
-    img = flatten_lighting(enlarge(page_images(path)[0]))
-    fmt = find_mrz(img)[0]
+    fmt, _, _, upright, hits = read_side(path)
     if fmt == "TD3":
         return "passport", "two-line MRZ (passport format)"
     if fmt == "TD1":
         return "id_card", "three-line MRZ (ID card format)"
-
-    upright, hits = upright_by_labels(img)
     if hits >= 2:
         if count_hits(pytesseract.image_to_string(upright).lower(), PASSPORT_WORDS):
             return "passport", "ID labels and the word 'passport'"
