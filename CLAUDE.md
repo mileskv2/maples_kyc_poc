@@ -6,7 +6,7 @@ Context for anyone working on this repo, human or AI coding assistant. Read this
 
 McGill MMA Capstone (BUSA 693) with Maples Group (AML/KYC & Data Management, Montreal).
 Team: Miles (lead), Cathy (co-lead, slides), Hazel (synthetic data), Yorkin (classify/extract demo).
-Client contacts: Jervis, Andrew, Marc-Olivier. Final presentation April 2027.
+Client contacts: Maples KYC/AML, Final presentation April 2027.
 
 Goal (client's words): drag an investor's documents into a model, extract the KYC fields, flag what is
 missing, and show a traffic light for what was extracted correctly vs what a human must verify.
@@ -131,7 +131,7 @@ takes ~10 min.
 
 ## Open questions for the client
 
-- Blank subscription agreement (Jervis to send).
+- Blank subscription agreement.
 - Are real submissions machine-readable or often blurry? (Our photo vs scan vs digital split answers
   "what if"; their answer tells us which number matters.)
 - 90 days vs "6 years" for proof of address.
