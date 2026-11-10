@@ -1,7 +1,5 @@
 # KYC Document Translator & Extractor – Proof of Concept
 
-McGill BUSA 693 capstone × Maples Group · LLM workstream
-
 Upload a Chinese or Arabic KYC document (image or PDF) and the app will:
 
 1. Identify the document type and read the original text
