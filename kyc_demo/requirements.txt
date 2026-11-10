@@ -1,0 +1,5 @@
+google-genai>=1.30
+streamlit>=1.40
+pandas
+openpyxl
+pydantic>=2
